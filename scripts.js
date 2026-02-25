@@ -12,8 +12,9 @@ function createUser (name, marker) {
 
     function makePlay (num, marker) {
         return function (secondNum) {
-            alert(matrix[num][secondNum] === '');
-            matrix[num][secondNum] = marker;
+            if(matrix[num][secondNum] === '') {
+            matrix[num][secondNum] = marker; }
+            else alert("You cant do that!");
         }
     };
 
@@ -30,6 +31,6 @@ console.log(playerOne);
 console.log(playerTwo);
 
 playerOne.play0(2);
-playerOne.play0(2);
+playerTwo.play0(2);
 
 console.table(matrix);
