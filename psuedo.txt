@@ -16,7 +16,9 @@
      #::::#    #::::#     
      ######    ######     
                           
-                          
+players 
+game
+gameBoard                        
                           
 have players be able to place markers 
     need players with markers 
