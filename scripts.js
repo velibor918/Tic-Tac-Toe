@@ -1,9 +1,9 @@
 
 const matrix = ( () => {
     let arr = [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
+        ['a', 'a', 'a'],
+        ['a', 'a', 'a'],
+        ['', 'a', 'a']
     ]
     return arr; }
 )();
@@ -36,10 +36,16 @@ const playerTwo = createUser('Two', 'O');
 console.log(playerOne);
 console.log(playerTwo);
 
-playerOne.play2(0);
-playerOne.play2(1);
-playerOne.play2(2);
-playerOne.checkWin();
+// playerOne.play2(0);
+// playerOne.play2(1);
+// playerOne.play2(2);
+// playerOne.checkWin();
 
 
 console.table(matrix);
+
+function test () {
+    return alert(matrix.some( (row) => (row.includes('') ) ) );
+}
+
+test();
