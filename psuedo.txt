@@ -1,0 +1,62 @@
+                          
+                          
+                          
+     ######    ######     
+     #::::#    #::::#     
+     #::::#    #::::#     
+######::::######::::######
+#::::::::::::::::::::::::#
+######::::######::::######
+     #::::#    #::::#     
+     #::::#    #::::#     
+######::::######::::######
+#::::::::::::::::::::::::#
+######::::######::::######
+     #::::#    #::::#     
+     #::::#    #::::#     
+     ######    ######     
+                          
+                          
+                          
+have players be able to place markers 
+    need players with markers 
+have check for already taken up spaces
+
+have check for every winning combination  
+    down 
+    right   
+    across
+
+have check for tie
+when checking win conditions 
+    if win conditions false
+        if the board doesnt have empty spaces (function characterExists(arr, char) { return arr.some(row => row.includes(char));})
+            return tie 
+
+players 
+
+createUser(name, marker) {
+    name 
+    marker 
+}
+
+game 
+
+let my2DArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+const newValue = 0;
+
+for (let i = 0; i < my2DArray.length; i++) {
+    for (let j = 0; j < my2DArray[i].length; j++) {
+        my2DArray[i][j] = newValue;
+    }
+}
+
+
+gameBoard 
+                          
+                          
+                          
