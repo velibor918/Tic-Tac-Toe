@@ -31,6 +31,12 @@ have check for every winning combination
 
 have check for tie
 when checking win conditions 
+    if player has won   
+        playerWincount +=1
+        reset board
+    should have win counter 
+    has to be private variable 
+    should have functions to increase and get win counter 
     if win conditions false
         if the board doesnt have empty spaces (function characterExists(arr, char) { return arr.some(row => row.includes(char));})
             return tie 
