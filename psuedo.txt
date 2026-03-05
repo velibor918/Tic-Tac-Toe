@@ -48,7 +48,24 @@ createUser(name, marker) {
     marker 
 }
 
-game 
+game (player1 player2) 
+    let isTurn = 0 
+    let pl1 hasWon and pl2hasWon 
+
+    while(pl1 hasWon = false && pl2 hasWon = false) {
+        if isTurn = 0
+            input
+            pl1.inputvalue
+            pl1.checkWin
+            isTurn = 1
+        else if isTurn = 1
+            pl2.inputvalue
+            pl2.checkWin
+            isTurn = 0
+    }
+
+    pl1.resetWinDeclaration
+    pl2.resetWinDeclaration
 
 
 
