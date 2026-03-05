@@ -27,6 +27,7 @@ function createUser (name, marker) {
 
     const getWinDeclaration = () => hasWon;
     const changeWinDeclaration = () => {hasWon = true};
+    const resetWinDeclaration = () => {hasWon = false};
 
     function checkWin () {
         if ( (matrix[0][0] === marker && matrix[1][1] === marker && matrix[2][2] === marker) || (matrix[0][2] === marker && matrix[1][1] === marker && matrix[2][0] === marker) || (matrix[0][0] === marker && matrix[1][0] === marker && matrix[2][0] === marker) || (matrix[0][1] === marker && matrix[1][1] === marker && matrix[2][1] === marker) || (matrix[0][2] === marker && matrix[1][2] === marker && matrix[2][2] === marker) || (matrix[0][0] === marker && matrix[0][1] === marker && matrix[0][2] === marker) || (matrix[1][0] === marker && matrix[1][1] === marker && matrix[1][2] === marker) || (matrix[2][0] === marker && matrix[2][1] === marker && matrix[2][2] === marker)) {
@@ -41,7 +42,7 @@ function createUser (name, marker) {
     const play0 = makePlay(0, marker);
     const play1 = makePlay(1, marker);
     const play2 = makePlay(2, marker);
-    return {name, marker, play0, play1, play2, checkWin, getWinCount, increaseWinCount, getWinDeclaration, changeWinDeclaration};
+    return {name, marker, play0, play1, play2, checkWin, getWinCount, increaseWinCount, getWinDeclaration, changeWinDeclaration, resetWinDeclaration};
 };
 
 const playerOne = createUser('One', 'X');
