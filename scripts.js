@@ -48,6 +48,25 @@ function createUser (name, marker) {
 const playerOne = createUser('One', 'X');
 const playerTwo = createUser('Two', 'O');
 
+function gamePlay () {
+    let isTurn = 0;
+
+    const { getWinDeclaration, changeWinDeclaration} = createUser(name, marker);
+
+    function playGame (playOne, playTwo) {
+        let playOneDeclaration = playOne.getWinDeclaration();
+        let playTwoDeclaration = playTwo.getWinDeclaration();
+
+        while (playOneDeclaration === false && playTwoDeclaration === false) {
+            if (isTurn === 0) {
+                console.log(`It is Player One's turn. Please make a play.`);
+                isTurn = 1;
+
+            }
+        }
+    }
+}
+
 console.log(playerOne);
 console.log(playerTwo);
 
@@ -62,4 +81,3 @@ console.table(matrix);
 function test () {
     return alert(matrix.some( (row) => (row.includes('') ) ) );
 }
-

@@ -85,3 +85,12 @@ for (let i = 0; i < my2DArray.length; i++) {
         my2DArray[i][j] = newValue;
     }
 }
+
+while ( values that change when a player wins are zero) {
+    if isTurn = 0
+        console.log Player One PLease make a play 
+        isTurn = 1 
+        ***how to make the while loop wait while playerOne makes a move before moving on to next iteration???***
+        isTurn = 1 
+        get the values for the while condition again
+        check for win } 
