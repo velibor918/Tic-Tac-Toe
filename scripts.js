@@ -48,15 +48,24 @@ function createUser (name, marker) {
 const playerOne = createUser('One', 'X');
 const playerTwo = createUser('Two', 'O');
 
-
 console.log(playerOne);
 console.log(playerTwo);
+
+function gamePlay () {
+    let isTurn = 0; 
+
+    function changeTurn () {
+        if (isTurn = 0) {
+            isTurn = 1
+        }
+        else { isTurn = 0}
+    } 
+}
 
 // playerOne.play2(0);
 // playerOne.play2(1);
 // playerOne.play2(2);
 // playerOne.checkWin();
-
 
 console.table(matrix);
 
