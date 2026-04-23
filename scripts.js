@@ -77,7 +77,8 @@ function gamePlay () {
         }
     }
 
-}
+    return {changeTurn, getActivePlayer}
+};
 
 // playerOne.play2(0);
 // playerOne.play2(1);
