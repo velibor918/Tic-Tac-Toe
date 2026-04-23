@@ -59,7 +59,24 @@ function gamePlay () {
             isTurn = 1
         }
         else { isTurn = 0}
-    } 
+    };
+
+    const {getWinDeclaration} = createUser;
+
+    function getActivePlayer (player1, player2) {
+
+        let player1Win = player1.getWinDeclaration();
+        let player2Win = player2.getWinDeclaration();
+
+        if (player1Win === true || player2Win === true) {
+            return alert('The game is over!');
+        } else if (isTurn = 0) {
+            return player1;
+        } else if (isTurn = 1) {
+            return player2;
+        }
+    }
+
 }
 
 // playerOne.play2(0);
