@@ -10,10 +10,13 @@ const matrix = ( () => {
 
 function createUser (name, marker) {
 
+    const {changeTurn} = gamePlay;
+
     function makePlay (num, marker) {
         return function (secondNum) {
             if(matrix[num][secondNum] === '') {
-                matrix[num][secondNum] = marker; }
+                matrix[num][secondNum] = marker;
+                changeTurn(); }
             else alert("You cant do that!");
         }
     };
@@ -77,7 +80,7 @@ function gamePlay () {
         }
     }
 
-    return {changeTurn, getActivePlayer}
+    return {changeTurn, getActivePlayer};
 };
 
 // playerOne.play2(0);
