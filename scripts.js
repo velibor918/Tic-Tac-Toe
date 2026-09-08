@@ -57,11 +57,19 @@ function gamePlay (playerOne, playerTwo) {
 
     let isTurn = 0;
 
-    function getTurn( playerOne, playerTwo) {
+    function getTurn(playerOne, playerTwo) {
         if (isTurn = 0) {
             return playerOne;
         } else {
             return playerTwo;
+        };
+    };
+
+    function changeTurn () {
+        if (isTurn = 0) {
+            isTurn = 1;
+        } else {
+            isTurn = 0;
         };
     };
 
