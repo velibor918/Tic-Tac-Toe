@@ -55,6 +55,16 @@ const playerTwoo = createUser('Two', 'O');
 
 function gamePlay (playerOne, playerTwo) {
 
+    let isTurn = 0;
+
+    function getTurn( playerOne, playerTwo) {
+        if (isTurn = 0) {
+            return playerOne;
+        } else {
+            return playerTwo;
+        };
+    };
+
     const getFirstPlayer = () => playerOne.marker;
 
     const getSecondPlayer = () => playerTwo.marker;
