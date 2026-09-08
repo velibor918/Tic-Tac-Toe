@@ -57,6 +57,8 @@ function gamePlay (playerOne, playerTwo) {
 
     let isTurn = 0;
 
+    const isTurnTest = () => isTurn;
+
     function getTurn(playerOne, playerTwo) {
         if (isTurn = 0) {
             return playerOne;
@@ -66,33 +68,37 @@ function gamePlay (playerOne, playerTwo) {
     };
 
     function changeTurn () {
-        if (isTurn = 0) {
-            isTurn = 1;
+        console.log(isTurn);
+        if (isTurn === 0) {
+             isTurn = 1;
         } else {
             isTurn = 0;
         };
     };
 
+    // let player = getTurn(playerOne, playerTwo);
+
     const getFirstPlayer = () => playerOne.marker;
 
     const getSecondPlayer = () => playerTwo.marker;
 
-    function makePlay (num, playerOne) {
+    function makePlay (num, player) {
+        player = getTurn(playerOne, playerTwo);
         return function (secondNum) {
             if(matrix[num][secondNum] === '') {
-                matrix[num][secondNum] = playerOne.marker;
-                // changeTurn();
+                matrix[num][secondNum] = player.marker;
+                changeTurn();
                 /*getTurn();*/ }
             else alert("You cant do that!");
         }
     };
 
-    const play0 = makePlay(0, playerOne);
-    const play1 = makePlay(1, playerOne);
-    const play2 = makePlay(2, playerOne);
+    const play0 = makePlay(0);
+    const play1 = makePlay(1);
+    const play2 = makePlay(2);
   
 
-    return {getFirstPlayer, getSecondPlayer, play0, play1, play2};
+    return {getFirstPlayer, getSecondPlayer, play0, play1, play2, getTurn, changeTurn, isTurnTest, isTurn};
 };
 
 // console.log(playerOne);
@@ -111,8 +117,8 @@ const active = gamePlay(playerOnee, playerTwoo);
 alert(active.getFirstPlayer());
 alert(active.getSecondPlayer());
 
-active.play0(2, playerOnee);
-
+// active.play0(1);
+// active.play0(0);
 
 function test () {
     return alert(matrix.some( (row) => (row.includes('') ) ) );
