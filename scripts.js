@@ -58,9 +58,23 @@ function gamePlay (playerOne, playerTwo) {
     const getFirstPlayer = () => playerOne.marker;
 
     const getSecondPlayer = () => playerTwo.marker;
+
+    function makePlay (num, playerOne) {
+        return function (secondNum) {
+            if(matrix[num][secondNum] === '') {
+                matrix[num][secondNum] = playerOne.marker;
+                // changeTurn();
+                /*getTurn();*/ }
+            else alert("You cant do that!");
+        }
+    };
+
+    const play0 = makePlay(0, playerOne);
+    const play1 = makePlay(1, playerOne);
+    const play2 = makePlay(2, playerOne);
   
 
-    return {getFirstPlayer, getSecondPlayer};
+    return {getFirstPlayer, getSecondPlayer, play0, play1, play2};
 };
 
 // console.log(playerOne);
@@ -78,6 +92,9 @@ const active = gamePlay(playerOnee, playerTwoo);
 
 alert(active.getFirstPlayer());
 alert(active.getSecondPlayer());
+
+active.play0(2, playerOnee);
+
 
 function test () {
     return alert(matrix.some( (row) => (row.includes('') ) ) );
