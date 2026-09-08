@@ -50,7 +50,7 @@ createUser(name, marker) {
 
 game (player1 player2) 
     let isTurn = 0 
-    function changeTurn () {
+    function changeTurn () { THIS HAS TO BE GIVEN TO CREATEUSER AND THEN IT HAS TO BE PUT IN THE PLAY function
         if isTurn = 0
             isTurn = 1
         else isTurn = 0
@@ -59,7 +59,7 @@ game (player1 player2)
     function getActivePlayer (player1, player2) {
 
         let pl1 hasWon and pl2hasWon
-            if pl1 hasWon || pl2 hasWon
+            if pl1 hasWon || pl2 hasWon THESE HAVE TO BE GOTTEN FROM CREATEUSER 
             return THE GAME IS OVER 
         if isTurn = 0
             return player1

@@ -8,15 +8,17 @@ const matrix = ( () => {
     return arr; }
 )();
 
+
 function createUser (name, marker) {
 
-    const {changeTurn} = gamePlay;
+    const { changeTurn, getTurn } = gamePlay();
 
     function makePlay (num, marker) {
         return function (secondNum) {
             if(matrix[num][secondNum] === '') {
                 matrix[num][secondNum] = marker;
-                changeTurn(); }
+                changeTurn();
+                getTurn(); }
             else alert("You cant do that!");
         }
     };
@@ -48,48 +50,36 @@ function createUser (name, marker) {
     return {name, marker, play0, play1, play2, checkWin, getWinCount, increaseWinCount, getWinDeclaration, changeWinDeclaration, resetWinDeclaration};
 };
 
-const playerOne = createUser('One', 'X');
-const playerTwo = createUser('Two', 'O');
+const playerOnee = createUser('One', 'X');
+const playerTwoo = createUser('Two', 'O');
 
-console.log(playerOne);
-console.log(playerTwo);
+function gamePlay (playerOne, playerTwo) {
 
-function gamePlay () {
-    let isTurn = 0; 
+    const getFirstPlayer = () => playerOne.marker;
 
-    function changeTurn () {
-        if (isTurn = 0) {
-            isTurn = 1
-        }
-        else { isTurn = 0}
-    };
+    const getSecondPlayer = () => playerTwo.marker;
+  
 
-    const {getWinDeclaration} = createUser;
-
-    function getActivePlayer (player1, player2) {
-
-        let player1Win = player1.getWinDeclaration();
-        let player2Win = player2.getWinDeclaration();
-
-        if (player1Win === true || player2Win === true) {
-            return alert('The game is over!');
-        } else if (isTurn = 0) {
-            return player1;
-        } else if (isTurn = 1) {
-            return player2;
-        }
-    }
-
-    return {changeTurn, getActivePlayer};
+    return {getFirstPlayer, getSecondPlayer};
 };
+
+// console.log(playerOne);
+// console.log(playerTwo);
+
 
 // playerOne.play2(0);
 // playerOne.play2(1);
 // playerOne.play2(2);
 // playerOne.checkWin();
 
-console.table(matrix);
+// console.table(matrix);
+
+const active = gamePlay(playerOnee, playerTwoo);
+
+alert(active.getFirstPlayer());
+alert(active.getSecondPlayer());
 
 function test () {
     return alert(matrix.some( (row) => (row.includes('') ) ) );
 }
+
