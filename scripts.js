@@ -88,6 +88,7 @@ function gamePlay (playerOne, playerTwo) {
             if(matrix[num][secondNum] === '') {
                 matrix[num][secondNum] = player.marker;
                 changeTurn();
+                checkWin(player, player.marker);
                 /*getTurn();*/ }
             else alert("You cant do that!");
         }
@@ -99,11 +100,9 @@ function gamePlay (playerOne, playerTwo) {
 
         function checkWin (player, marker) {
         if ( (matrix[0][0] === marker && matrix[1][1] === marker && matrix[2][2] === marker) || (matrix[0][2] === marker && matrix[1][1] === marker && matrix[2][0] === marker) || (matrix[0][0] === marker && matrix[1][0] === marker && matrix[2][0] === marker) || (matrix[0][1] === marker && matrix[1][1] === marker && matrix[2][1] === marker) || (matrix[0][2] === marker && matrix[1][2] === marker && matrix[2][2] === marker) || (matrix[0][0] === marker && matrix[0][1] === marker && matrix[0][2] === marker) || (matrix[1][0] === marker && matrix[1][1] === marker && matrix[1][2] === marker) || (matrix[2][0] === marker && matrix[2][1] === marker && matrix[2][2] === marker)) {
-            increaseWinCount();
-            changeWinDeclaration();
+                alert(`${player} has won!`);
         } else if (matrix.some( (row) => (row.includes('') ) )  === false ) {
             alert("Its a tie!");
-            changeWinDeclaration();
         }
     }
 
