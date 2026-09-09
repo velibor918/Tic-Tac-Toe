@@ -83,8 +83,8 @@ function gamePlay (playerOne, playerTwo) {
     const getSecondPlayer = () => playerTwo.marker;
 
     function makePlay (num, player) {
-        // player = getTurn(playerOne, playerTwo);
         return function (secondNum) {
+            // player = getTurn(playerOne, playerTwo);
             if(matrix[num][secondNum] === '') {
                 matrix[num][secondNum] = player.marker;
                 changeTurn();
@@ -108,7 +108,7 @@ function gamePlay (playerOne, playerTwo) {
 
   
 
-    return {getFirstPlayer, getSecondPlayer, play0, play1, play2, getTurn, changeTurn, isTurnTest, isTurn};
+    return {getFirstPlayer, getSecondPlayer, play0, play1, play2, getTurn, changeTurn, isTurnTest, isTurn, /*player,*/ checkWin};
 };
 
 // console.log(playerOne);
