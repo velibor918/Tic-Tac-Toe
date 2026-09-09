@@ -60,7 +60,7 @@ function gamePlay (playerOne, playerTwo) {
     const isTurnTest = () => isTurn;
 
     function getTurn(playerOne, playerTwo) {
-        if (isTurn = 0) {
+        if (isTurn === 0) {
             return playerOne;
         } else {
             return playerTwo;
@@ -83,7 +83,7 @@ function gamePlay (playerOne, playerTwo) {
     const getSecondPlayer = () => playerTwo.marker;
 
     function makePlay (num, player) {
-        player = getTurn(playerOne, playerTwo);
+        // player = getTurn(playerOne, playerTwo);
         return function (secondNum) {
             if(matrix[num][secondNum] === '') {
                 matrix[num][secondNum] = player.marker;
