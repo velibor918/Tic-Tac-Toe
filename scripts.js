@@ -96,6 +96,17 @@ function gamePlay (playerOne, playerTwo) {
     const play0 = makePlay(0);
     const play1 = makePlay(1);
     const play2 = makePlay(2);
+
+        function checkWin () {
+        if ( (matrix[0][0] === marker && matrix[1][1] === marker && matrix[2][2] === marker) || (matrix[0][2] === marker && matrix[1][1] === marker && matrix[2][0] === marker) || (matrix[0][0] === marker && matrix[1][0] === marker && matrix[2][0] === marker) || (matrix[0][1] === marker && matrix[1][1] === marker && matrix[2][1] === marker) || (matrix[0][2] === marker && matrix[1][2] === marker && matrix[2][2] === marker) || (matrix[0][0] === marker && matrix[0][1] === marker && matrix[0][2] === marker) || (matrix[1][0] === marker && matrix[1][1] === marker && matrix[1][2] === marker) || (matrix[2][0] === marker && matrix[2][1] === marker && matrix[2][2] === marker)) {
+            increaseWinCount();
+            changeWinDeclaration();
+        } else if (matrix.some( (row) => (row.includes('') ) )  === false ) {
+            alert("Its a tie!");
+            changeWinDeclaration();
+        }
+    }
+
   
 
     return {getFirstPlayer, getSecondPlayer, play0, play1, play2, getTurn, changeTurn, isTurnTest, isTurn};
